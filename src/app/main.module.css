@@ -1,77 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
 }
 
-.textSelectFilter{
-    color: #fff;
-    font-size: 2.25rem;
-    font-family: "Open Sans", sans-serif;
+.textSelectFilter {
+  color: #fff;
+  font-size: 2.25rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
-    background-image: url('/images/bg.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 100vh;
-    min-width: 100vw;
-    margin: 0;
-    padding: 0;
+  background-image: url("/images/bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .btn {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: solid 3px #6B63B5;
-    color: #fff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    line-height: 25px;
-    display: inline-block;
-    font-size: 17px;
-    border-radius: 4px;
-    font-family: Open Sans;
-    font-weight: 600;
-    width: 288px;
-    height: 67px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: solid 3px #6b63b5;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 25px;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 4px;
+  font-family: Open Sans;
+  font-weight: 600;
+  width: 288px;
+  height: 67px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: rgba(107, 99, 181, 0.6);
+  background-color: rgba(107, 99, 181, 0.6);
 }
 
 .btn:active {
-    background-color: #6B63B5;
+  background-color: #6b63b5;
 }
 
 .btnActive {
-    background-color: #6B63B5;
+  background-color: #6b63b5;
 }
 
 .containerBtns {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
-    width: 100%;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  width: 100%;
+  gap: 50px;
 }
 
 .containerCards {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+
+.containerFavorites {
+  padding: "0";
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 120px;
 }
