@@ -1,6 +1,9 @@
+'use client'
 import Image from "next/image";
 import styles from "./styles.module.css"
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../../store/favoritesSlice";
 
 interface CardProps {
     name: string;
@@ -12,9 +15,24 @@ interface CardProps {
     isStudent: boolean;
     image: string;
     house?: string;
+    id: string;
 }
 
-const CardComponent = ({ name, isAlive, birthDate, gender, eyesColour, hairColour, isStudent, image, house }): React.ReactElement<CardProps> => {
+const CardComponent = ({ name, isAlive, birthDate, gender, eyesColour, hairColour, isStudent, image, house, id }): React.ReactElement<CardProps> => {
+    const dispatch = useDispatch();
+    const favorites = useSelector((state: any) => state.favorites.items);
+
+    const isFavorite = favorites.some(fav => fav.id === id);
+
+    const handleFavoriteToggle = () => {
+        if (isFavorite) {
+            dispatch(removeFavorite(id));
+        } else {
+            const character: any = { id, name, isAlive, birthDate, gender, eyesColour, hairColour, isStudent, image, house };
+            dispatch(addFavorite(character));
+        }
+    };
+
     return (
         <article className={isAlive ? styles.card : styles.cardNotAlive}>
             {(house === 'Gryffindor' || house === '') &&
@@ -41,7 +59,11 @@ const CardComponent = ({ name, isAlive, birthDate, gender, eyesColour, hairColou
             <div className={styles.containerText}>
                 <div className={styles.headerCard}>
                     <p className={styles.textTop}>{isAlive ? "VIVO" : "FINADO"} / {isStudent ? "ESTUDIANTE" : "STAFF"}</p>
-                    <Image src="/icons/favorite.svg" alt="favorite-icon" width={20} height={22} />
+                    {isFavorite ?
+                        <Image src="/icons/favorite-fill.svg" alt="favorite-icon" width={20} height={22} onClick={handleFavoriteToggle} />
+                        :
+                        <Image src="/icons/favorite.svg" alt="favorite-icon" width={20} height={22} onClick={handleFavoriteToggle} />
+                    }
                 </div>
                 <h4 className={styles.textName}>{!isAlive ? "+" : null} {name}</h4>
                 <div className={styles.row}>
