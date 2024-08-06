@@ -1,4 +1,5 @@
 import Head from "next/head"
+import styles from "./globals.module.css"
 
 export default function RootLayout({
     children,
@@ -10,7 +11,9 @@ export default function RootLayout({
             <Head>
                 <title>amTest</title>
             </Head>
-            <body>{children}</body>
+            <body className={styles.body}>
+                {children}
+            </body>
         </html>
     )
 }
