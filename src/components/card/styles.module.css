@@ -9,6 +9,15 @@
     overflow: hidden;
 }
 
+.cardNotAlive {
+    display: flex;
+    width: 515px;
+    height: 265px;
+    background-color: #ccc;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
 .textName {
     color: #081F32;
     font-size: 28px;

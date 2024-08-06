@@ -16,7 +16,7 @@ interface CardProps {
 
 const CardComponent = ({ name, isAlive, birthDate, gender, eyesColour, hairColour, isStudent, image, house }): React.ReactElement<CardProps> => {
     return (
-        <article className={styles.card}>
+        <article className={isAlive ? styles.card : styles.cardNotAlive}>
             {(house === 'Gryffindor' || house === '') &&
                 <div className={styles.containerImageGryffindor}>
                     <Image src={image} className={styles.image} alt="profile" width={165} height={165} />
@@ -43,7 +43,7 @@ const CardComponent = ({ name, isAlive, birthDate, gender, eyesColour, hairColou
                     <p className={styles.textTop}>{isAlive ? "VIVO" : "FINADO"} / {isStudent ? "ESTUDIANTE" : "STAFF"}</p>
                     <Image src="/icons/favorite.svg" alt="favorite-icon" width={20} height={22} />
                 </div>
-                <h4 className={styles.textName}>{name}</h4>
+                <h4 className={styles.textName}>{!isAlive ? "+" : null} {name}</h4>
                 <div className={styles.row}>
                     <span className={styles.textProperty}>Cumpleaños:</span>
                     <span className={styles.textValue}>{birthDate !== '' ? birthDate : 'N/A'}</span>
