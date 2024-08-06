@@ -1,13 +1,34 @@
+'use client'
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from"./main.module.css"
+import styles from "./main.module.css";
 import CardComponent from "../components/card/card";
 import { Character } from "../types/character.types";
 
-const Page = async (): Promise<JSX.Element>  => {
-  const response: Response = await fetch('http://localhost:4000/characters');
-  const characters: Character[] = await response.json();
+const Page = (): JSX.Element => {
+  const [charactersOriginal, setCharactersOriginal] = useState<Character[]>([]);
+  const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
+  const [activeFilter, setActiveFilter] = useState<'students' | 'staff' | null>(null);
 
-  console.log(characters);
+  const fetchCharacters = async () => {
+    const response: Response = await fetch('http://localhost:4000/characters');
+    const characters: Character[] = await response.json();
+    setCharactersOriginal(characters);
+    setFilteredCharacters(characters);
+  };
+
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
+
+  const filterCharacters = (areStudents: boolean) => {
+    const filtered = areStudents
+      ? charactersOriginal.filter(character => character.hogwartsStudent)
+      : charactersOriginal.filter(character => character.hogwartsStaff);
+
+    setFilteredCharacters(filtered);
+    setActiveFilter(areStudents ? 'students' : 'staff');
+  };
 
   return (
     <main className={styles.container}>
@@ -17,12 +38,12 @@ const Page = async (): Promise<JSX.Element>  => {
       </section>
 
       <section className={styles.containerBtns}>
-        <button type="button" className={styles.btn}>ESTUDIANTES</button>
-        <button type="button" className={styles.btn}>STAFF</button>
+        <button type="button"  className={`${styles.btn} ${activeFilter === 'students' ? styles.btnActive : ''}`} onClick={() => filterCharacters(true)}>ESTUDIANTES</button>
+        <button type="button" className={`${styles.btn} ${activeFilter === 'staff' ? styles.btnActive : ''}`}  onClick={() => filterCharacters(false)}>STAFF</button>
       </section>
 
       <section className={styles.containerCards}>
-        {characters.map((character) => (
+        {filteredCharacters.map((character) => (
           <CardComponent
             key={character.id}
             name={character.name}

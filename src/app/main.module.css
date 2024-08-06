@@ -53,6 +53,10 @@
     background-color: #6B63B5;
 }
 
+.btnActive {
+    background-color: #6B63B5;
+}
+
 .containerBtns {
     display: flex;
     align-items: center;
