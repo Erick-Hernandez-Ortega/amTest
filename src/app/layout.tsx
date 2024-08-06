@@ -1,5 +1,8 @@
+'use client'
 import Head from "next/head"
 import styles from "./globals.module.css"
+import { Provider } from "react-redux"
+import store from '../store/store';
 
 export default function RootLayout({
     children,
@@ -12,7 +15,9 @@ export default function RootLayout({
                 <title>amTest</title>
             </Head>
             <body className={styles.body}>
-                {children}
+                <Provider store={store}>
+                    {children}
+                </Provider>
             </body>
         </html>
     )

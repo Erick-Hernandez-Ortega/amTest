@@ -60,6 +60,7 @@ const Page = (): JSX.Element => {
             isStudent={character.hogwartsStudent}
             image={character.image}
             house={character.house}
+            id={character.id}
           />
         ))}
       </section>
