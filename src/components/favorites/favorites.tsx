@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Character } from "../../types/character.types";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavorite } from "../../store/favoritesSlice";
+import ModalAddComponent from "../modal-add/modal-add";
 
 
 interface FavoriteProps {
@@ -12,6 +13,7 @@ interface FavoriteProps {
 
 const FavoriteComponent = (): React.ReactElement<FavoriteProps> => {
     const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+    const [modalAddIsOpen, setModalAddIsOpen] = useState<boolean>(true);
     const favorites: Character[] = useSelector((state: any) => state.favorites.items);
     const dispatch = useDispatch();
 
@@ -26,7 +28,7 @@ const FavoriteComponent = (): React.ReactElement<FavoriteProps> => {
                     <p className={styles.text}>Favoritos</p>
                     <Image src="/icons/favorite-saved.svg" alt="favorite-icon" width={20} height={22} />
                 </div>
-                <div className={styles.option}>
+                <div className={styles.option} onClick={() => setModalAddIsOpen(!modalAddIsOpen)}>
                     <p className={styles.text}>Agregar</p>
                     <Image src="/icons/user-add.svg" alt="user-add-icon" width={20} height={22} />
                 </div>
@@ -42,6 +44,7 @@ const FavoriteComponent = (): React.ReactElement<FavoriteProps> => {
                     ))}
                 </div>
             }
+            {modalAddIsOpen && <ModalAddComponent onClose={() => setModalAddIsOpen(!modalAddIsOpen)} />}
         </div>
     );
 };
