@@ -76,9 +76,33 @@
   gap: 50px;
 }
 
+.containerCardsResponsive {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+  display: none;
+}
+
 .containerFavorites {
   padding: "0";
   display: flex;
   justify-content: flex-end;
   margin-right: 120px;
 }
+
+@media (width <= 767px) { 
+  .containerFavorites {
+    display: none;
+  }
+
+  .containerCards {
+    display: none;
+  }
+
+  .containerCardsResponsive {
+    display: flex;
+  }
+ }

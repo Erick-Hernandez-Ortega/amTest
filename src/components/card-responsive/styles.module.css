@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.card {
+    display: flex;
+    width: 160px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.cardNotAlive {
+    display: flex;
+    width: 160px;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 16px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.textName {
+    color: #081F32;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 600; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.containerImageGryffindor {
+    background: linear-gradient(135deg, #FF0000 0%, #FED482 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 140px;
+    padding: 5px 0;
+}
+
+.containerImageSlytherin {
+    background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 140px;
+    padding: 5px 0;
+}
+
+.containerImageHufflepuff {
+    background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 140px;
+    padding: 5px 0;
+}
+
+.containerImageRavenclaw {
+    background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 140px;
+    padding: 5px 0;
+}
+
+.image {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.textTop {
+    color: #999999;
+    font-size: 11px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 14px;
+    font-weight: 600;
+}
+
+.containerText {
+    padding: 12px;
+    flex: 1;
+}
+
+
+.headerCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -5,6 +5,7 @@ import styles from "./main.module.css";
 import CardComponent from "../components/card/card";
 import { Character } from "../types/character.types";
 import FavoriteComponent from "../components/favorites/favorites";
+import CardResponsiveComponent from "../components/card-responsive/card-responsive";
 
 const Page = (): JSX.Element => {
   const [charactersOriginal, setCharactersOriginal] = useState<Character[]>([]);
@@ -50,6 +51,23 @@ const Page = (): JSX.Element => {
       <section className={styles.containerCards}>
         {filteredCharacters.map((character) => (
           <CardComponent
+            key={character.id}
+            name={character.name}
+            isAlive={character.alive}
+            birthDate={character.dateOfBirth}
+            gender={character.gender}
+            eyesColour={character.eyeColour}
+            hairColour={character.hairColour}
+            isStudent={character.hogwartsStudent}
+            image={character.image}
+            house={character.house}
+            id={character.id}
+          />
+        ))}
+      </section>
+      <section className={styles.containerCardsResponsive}>
+        {filteredCharacters.map((character) => (
+          <CardResponsiveComponent
             key={character.id}
             name={character.name}
             isAlive={character.alive}
