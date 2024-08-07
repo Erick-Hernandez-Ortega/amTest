@@ -28,4 +28,7 @@ npm test
 - Utilizar un framework de CSS como tailwind
 
 ## Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste
-- No me encontrado con ningun bug, a lo mucho falto poner que hiciera las validaciones en el form de agregar
+- Falto agregar en las instrucciones validar el formulario, lo solucione poniendo validaciones
+- Arreglar el problema de redux con next al utilizar babel por los test, lo solucione viendo la documentacion de next
+- Corregir el error de que no funcionaba los breakpoints de css, lo solucione viendo que se utiliza de la manera mas reciente
+- De ahi en mas ningun otro
