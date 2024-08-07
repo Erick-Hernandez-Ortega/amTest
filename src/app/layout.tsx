@@ -1,10 +1,10 @@
 'use client'
 import styles from "./globals.module.css"
 import { Provider } from "react-redux"
-import store from '../store/store';
+import store from '../store/store'
 
 export default function RootLayout({
-    children,
+    children
 }: {
     children: React.ReactNode
 }) {

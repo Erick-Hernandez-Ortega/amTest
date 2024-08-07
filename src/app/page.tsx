@@ -6,6 +6,7 @@ import CardComponent from "../components/card/card";
 import { Character } from "../types/character.types";
 import FavoriteComponent from "../components/favorites/favorites";
 import CardResponsiveComponent from "../components/card-responsive/card-responsive";
+import FavoriteResponsiveComponent from "../components/favorites-responsive/favorites-responsive";
 
 const Page = (): JSX.Element => {
   const [charactersOriginal, setCharactersOriginal] = useState<Character[]>([]);
@@ -81,6 +82,10 @@ const Page = (): JSX.Element => {
             id={character.id}
           />
         ))}
+      </section>
+
+      <section className={styles.containerFavoritesResponsive}>
+        <FavoriteResponsiveComponent />
       </section>
     </main>
   );

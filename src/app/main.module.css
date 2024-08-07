@@ -93,7 +93,11 @@
   margin-right: 120px;
 }
 
-@media (width <= 767px) { 
+.containerFavoritesResponsive {
+  display: none;
+}
+
+@media (width <= 767px) {
   .containerFavorites {
     display: none;
   }
@@ -105,4 +109,12 @@
   .containerCardsResponsive {
     display: flex;
   }
- }
+
+  .containerFavoritesResponsive {
+    display: flex;
+    position: fixed; 
+    bottom: 0; 
+    right: 0; 
+    width: 100%;
+  }
+}
