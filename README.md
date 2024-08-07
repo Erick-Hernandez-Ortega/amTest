@@ -13,6 +13,10 @@ npm run json
 ```bash
 npm run dev
 ```
+- Para ejecutar los test
+```bash
+npm test
+```
 
 ## ¿Qué es lo que mas te gustó de tu desarrollo?
 - Sus intrucciones claras a seguir
