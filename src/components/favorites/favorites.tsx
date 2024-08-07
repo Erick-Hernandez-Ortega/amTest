@@ -13,7 +13,7 @@ interface FavoriteProps {
 
 const FavoriteComponent = (): React.ReactElement<FavoriteProps> => {
     const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-    const [modalAddIsOpen, setModalAddIsOpen] = useState<boolean>(true);
+    const [modalAddIsOpen, setModalAddIsOpen] = useState<boolean>(false);
     const favorites: Character[] = useSelector((state: any) => state.favorites.items);
     const dispatch = useDispatch();
 
